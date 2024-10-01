@@ -1,0 +1,19 @@
+# description	: PC/SC Architecture smartcard tools
+# homepage	: https://pcsc-tools.apdu.fr/
+# depends	: pcsclite
+
+name=pcsc-tools
+version=1.7.2
+release=1
+noextract=""
+backup=""
+source="https://pcsc-tools.apdu.fr/$name-$version.tar.bz2"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/locale/
+}
