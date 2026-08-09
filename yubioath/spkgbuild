@@ -3,11 +3,11 @@
 # depends	: qt-sudo
 
 name=yubioath
-version=7.0.0
+version=7.4.1
 release=1
 noextract=""
 backup=""
-source="https://github.com/Yubico/yubioath-flutter/releases/download/7.0.0/yubico-authenticator-7.0.0-linux.tar.gz"
+source="https://github.com/Yubico/yubioath-flutter/releases/download/7.4.1/yubico-authenticator-7.4.1-linux.tar.gz"
 
 build() {
  cd yubico-authenticator-$version-linux
@@ -16,7 +16,7 @@ build() {
   sed -i 's|Icon=@EXEC_PATH/linux_support/com.yubico.yubioath.png|Icon=/usr/share/pixmaps/com.yubico.yubioath.png|' linux_support/com.yubico.authenticator.desktop
 
   mkdir -p $PKG/opt/Yubico-authenticator
-  ls -1 ../yubico-authenticator-7.0.0-linux | grep -v "linux_support\|desktop_integration.sh\|README.adoc" | xargs -I{} cp -r ../yubico-authenticator-7.0.0-linux/{} $PKG/opt/Yubico-authenticator
+  ls -1 ../yubico-authenticator-7.4.1-linux | grep -v "linux_support\|desktop_integration.sh\|README.adoc" | xargs -I{} cp -r ../yubico-authenticator-7.4.1-linux/{} $PKG/opt/Yubico-authenticator
 
   install -Dm644 linux_support/com.yubico.authenticator.desktop $PKG/usr/share/applications/com.yubico.authenticator.desktop
   install -Dm644 linux_support/com.yubico.yubioath.png $PKG/usr/share/pixmaps/com.yubico.yubioath.png

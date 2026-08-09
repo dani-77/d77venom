@@ -3,7 +3,7 @@
 # depends	: udisks2 python3-gobject python3-docopt gtk libnotify
 
 name=udiskie
-version=2.5.3
+version=2.7.0
 release=1
 noextract=""
 backup=""
