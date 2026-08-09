@@ -1,4 +1,7 @@
-<h1 align="center">d77venom</h1>
+<h1 align="center">
+  <img src="logo.png" alt="d77 logo" width="160"><br>
+  d77venom
+</h1>
 
 My own collection of Venom Linux ports.
 
