@@ -37,6 +37,17 @@ jobs:
             echo "proceed=true" >> "$GITHUB_OUTPUT"
           fi
 
+  keepalive:
+    # GitHub disables scheduled workflows after 60 days without repository
+    # activity. This re-enables the workflow through the API on every run,
+    # without creating commits.
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1
+
   check-updates:
     needs: gate
     if: needs.gate.outputs.proceed == 'true'
